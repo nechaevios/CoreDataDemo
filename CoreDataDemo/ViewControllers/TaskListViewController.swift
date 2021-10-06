@@ -83,7 +83,12 @@ class TaskListViewController: UITableViewController {
     }
     
     private func save(_ taskName: String) {
-        guard let task = StorageManager.shared.createManagedObject(forEntityName: "Task", inContext: context, withType: Task.self) else { return }
+        guard let task = StorageManager.shared.createManagedObject(
+            forEntityName: "Task",
+            inContext: context,
+            withType: Task.self
+        ) else { return }
+        
         task.title = taskName
         taskList.append(task)
         
@@ -117,7 +122,11 @@ extension TaskListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedTask = taskList[indexPath.row]
-        showAlert(with: "Update Task", and: "What do you want to do?", for: selectedTask )
+        showAlert(
+            with: "Update Task",
+            and: "What do you want to do?",
+            for: selectedTask
+        )
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
