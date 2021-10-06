@@ -61,7 +61,6 @@
 				D89E4B58270DB7A5003CE08E /* Resources */,
 				D89E4B59270DB7AD003CE08E /* StoryBoards */,
 				D89E4B46270DA8EC003CE08E /* CoreDataDemo.xcdatamodeld */,
-				D89E4B5C270DB848003CE08E /* Views */,
 				D89E4B5F270DC46C003CE08E /* Services */,
 			);
 			path = CoreDataDemo;
@@ -98,13 +97,6 @@
 				D89E4B4B270DA8ED003CE08E /* LaunchScreen.storyboard */,
 			);
 			path = StoryBoards;
-			sourceTree = "<group>";
-		};
-		D89E4B5C270DB848003CE08E /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		D89E4B5F270DC46C003CE08E /* Services */ = {
