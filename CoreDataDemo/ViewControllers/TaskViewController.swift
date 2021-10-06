@@ -96,6 +96,7 @@ class TaskViewController: UIViewController {
                 print(error)
             }
         }
+        
         delegate?.reloadData()
         dismiss(animated: true)
     }
