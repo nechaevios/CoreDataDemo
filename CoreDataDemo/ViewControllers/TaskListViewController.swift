@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import CoreData
 
 protocol TaskViewControllerDelegate {
     func reloadData()
@@ -86,8 +85,8 @@ class TaskListViewController: UITableViewController {
     }
     
     private func save(_ taskName: String) {
-        guard let entityDescription = NSEntityDescription.entity(forEntityName: "Task", in: context) else { return }
-        guard let task = NSManagedObject(entity: entityDescription, insertInto: context) as? Task else { return }
+        guard let task = StorageManager.shared.createManagedObject(forEntityName: "Task", inContext: context, withType: Task.self) else { return }
+        
         task.title = taskName
         taskList.append(task)
         
@@ -117,6 +116,12 @@ extension TaskListViewController {
         content.text = task.title
         cell.contentConfiguration = content
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let selectedTask = taskList[indexPath.row]
+        showAlert(with: selectedTask.title ?? "", and: "1")
     }
 }
 

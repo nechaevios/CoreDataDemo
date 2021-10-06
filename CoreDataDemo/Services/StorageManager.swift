@@ -5,6 +5,7 @@
 //  Created by Nechaev Sergey  on 06.10.2021.
 //
 
+import Foundation
 import CoreData
 
 class StorageManager {
@@ -36,6 +37,13 @@ class StorageManager {
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
         }
+    }
+    
+    func createManagedObject<T>(forEntityName: String, inContext: NSManagedObjectContext, withType: T.Type) -> T? {
+        guard let entityDescription = NSEntityDescription.entity(forEntityName: forEntityName, in: inContext) else { return nil}
+        guard let managedObject = NSManagedObject(entity: entityDescription, insertInto: inContext) as? T else { return nil}
+        
+        return managedObject
     }
     
 }
