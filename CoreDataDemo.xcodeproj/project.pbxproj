@@ -56,12 +56,12 @@
 		D89E4B3C270DA8EC003CE08E /* CoreDataDemo */ = {
 			isa = PBXGroup;
 			children = (
-				D89E4B56270DB791003CE08E /* App */,
 				D89E4B57270DB79C003CE08E /* ViewControllers */,
+				D89E4B5F270DC46C003CE08E /* Services */,
+				D89E4B56270DB791003CE08E /* App */,
 				D89E4B58270DB7A5003CE08E /* Resources */,
 				D89E4B59270DB7AD003CE08E /* StoryBoards */,
 				D89E4B46270DA8EC003CE08E /* CoreDataDemo.xcdatamodeld */,
-				D89E4B5F270DC46C003CE08E /* Services */,
 			);
 			path = CoreDataDemo;
 			sourceTree = "<group>";
