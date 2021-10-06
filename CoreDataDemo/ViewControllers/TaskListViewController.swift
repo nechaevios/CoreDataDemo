@@ -18,7 +18,7 @@ class TaskListViewController: UITableViewController {
     private var taskList: [Task] = []
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -59,8 +59,7 @@ class TaskListViewController: UITableViewController {
     }
     
     private func fetchData() {
-        let fetchRequest  = Task.fetchRequest()
-        
+        let fetchRequest = Task.fetchRequest()
         do {
             taskList = try context.fetch(fetchRequest)
         } catch let error {
@@ -68,17 +67,23 @@ class TaskListViewController: UITableViewController {
         }
     }
     
-    private func showAlert(with title: String, and message: String) {
+    private func showAlert(with title: String, and message: String, for selectedTask: Task? = nil ) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Save", style: .default) { _ in
             guard let task = alert.textFields?.first?.text, !task.isEmpty else { return }
-            self.save(task)
+            if selectedTask != nil {
+                self.update(task: selectedTask!, with: task)
+                print("Update1")
+            } else {
+                self.save(task)
+            }
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .destructive)
         alert.addAction(saveAction)
         alert.addAction(cancelAction)
         alert.addTextField { textField in
             textField.placeholder = "New Task"
+            textField.text = selectedTask?.title ?? ""
         }
         
         present(alert, animated: true)
@@ -101,6 +106,19 @@ class TaskListViewController: UITableViewController {
             }
         }
     }
+    
+    func update(task: Task, with title: String) {
+        task.title = title
+        if context.hasChanges {
+            do {
+                try context.save()
+                tableView.reloadData()
+            } catch let error {
+                print(error)
+            }
+        }
+        
+    }
 }
 
 // MARK: - UITableViewDataSource
@@ -121,8 +139,9 @@ extension TaskListViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let selectedTask = taskList[indexPath.row]
-        showAlert(with: selectedTask.title ?? "", and: "1")
+        showAlert(with: "Update Task", and: "What do you want to do?", for: selectedTask )
     }
+    
 }
 
 // MARK: - TaskViewControllerDelegate
