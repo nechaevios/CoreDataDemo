@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D820ADC32711C59600AC6938 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D820ADC22711C59600AC6938 /* AlertController.swift */; };
 		D89E4B3E270DA8EC003CE08E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89E4B3D270DA8EC003CE08E /* AppDelegate.swift */; };
 		D89E4B42270DA8EC003CE08E /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89E4B41270DA8EC003CE08E /* TaskListViewController.swift */; };
 		D89E4B48270DA8EC003CE08E /* CoreDataDemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D89E4B46270DA8EC003CE08E /* CoreDataDemo.xcdatamodeld */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D820ADC22711C59600AC6938 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		D89E4B3A270DA8EC003CE08E /* CoreDataDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89E4B3D270DA8EC003CE08E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D89E4B41270DA8EC003CE08E /* TaskListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				D89E4B41270DA8EC003CE08E /* TaskListViewController.swift */,
+				D820ADC22711C59600AC6938 /* AlertController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D89E4B42270DA8EC003CE08E /* TaskListViewController.swift in Sources */,
+				D820ADC32711C59600AC6938 /* AlertController.swift in Sources */,
 				D89E4B5E270DC469003CE08E /* StorageManager.swift in Sources */,
 				D89E4B48270DA8EC003CE08E /* CoreDataDemo.xcdatamodeld in Sources */,
 				D89E4B3E270DA8EC003CE08E /* AppDelegate.swift in Sources */,
