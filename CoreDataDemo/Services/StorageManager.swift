@@ -1,9 +1,8 @@
 //
-//  StorageManager.swift
+//  AlertController.swift
 //  CoreDataDemo
 //
-//  Created by Alexey Efimov on 31/10/2019.
-//  Copyright © 2019 Alexey Efimov. All rights reserved.
+//  Created by Nechaev Sergey  on 09.10.2021.
 //
 
 import CoreData
